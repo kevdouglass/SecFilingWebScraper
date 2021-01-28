@@ -1,0 +1,24 @@
+<h1>This is the NewsFeed Homepage</h1>
+
+
+{% if all_articles %}
+
+
+<ul>
+    {% for article in all_articles %}
+    
+        <li>
+            <a href="{% url 'article-details' article.id %}">
+                Title: {{article.Title}}
+            </a>
+        </li>
+
+        <!-- <li><a href="/news/{{ article.id }}/">Title: {{article.Title}}</a></li> -->
+    {% endfor %}
+</ul>
+
+{% else %}
+
+    <h3>Oops. You Have No Companies Saved To Your Database.</h3>
+
+{% endif %}

@@ -1,0 +1,23 @@
+
+<img src="{{ company.Name }}">
+
+<h1>{{ company.Ticker }} - {{ company.Name }} </h1>
+<h3>CEO:   {{ company.Ceo }}</h3>
+
+<h3>ISIN:   {{ company.ISIN }}</h3>
+<h3>CUSIP:   {{ company.CUSIP }}</h3>
+<h3>CIK:   {{ company.CIK }}</h3>
+
+<h3>Industry:   {{ company.Industry }}</h3>
+<h3>Institutional Owners:   {{ company.Institutional_Owners }}</h3>
+<h3>Shares Outstanding:   {{ company.Shares_Outstanding }}</h3>
+<h3>Institutional Shares:   {{ company.Institutional_Shares }}</h3>
+<h3>Institutional Value:   {{ company.Institutional_Value }}</h3>
+
+<ul>
+    {% for news_article in company.newsarticle_set.all %}
+    <li>
+        {{ news_article.Title }} - By: {{ news_article.Author }} @{{ news_article.Release_Date }}
+    </li>
+    {% endfor %}
+</ul>
